@@ -1,5 +1,4 @@
 import { Stack, useColorModeValue, Box, Collapse, Text, Portal } from "@chakra-ui/react";
-import Clock from "@components/Clock";
 import { MotionStack, MotionBox } from "@components/Motion";
 
 
@@ -53,7 +52,6 @@ export const MobileNav = ({ isOpen, onToggle }: any) => {
                     >
                         <HContainer isOpen={isOpen} n={0}>
                             <Stack align={'flex-end'}>
-                                <Clock />
                             </Stack>
                         </HContainer>
                         <HContainer isOpen={isOpen} n={1}>

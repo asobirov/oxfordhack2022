@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^1.8.5",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "focus-visible": "^5.2.0",
     "framer-motion": "^6",
     "iconoir-react": "^2.1.0",
     "next": "12.1.0",
