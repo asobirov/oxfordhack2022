@@ -29,42 +29,38 @@ const Layout = ({ children, title, description, navbarTitle, coverImage = '/publ
 
     return (
         <>
-            <Flex>
-                <Sidebar />
-                <Flex
-                    direction={'column'}
-                    as='main'
+            <Flex
+                direction={'column'}
+                as='main'
+                flex={1}
+                px={5}
+                mt={{ base: 6, md: 5 }}
+                overflow={'hidden'}
+                maxH={is100vh ? '100vh' : 'auto'}
+                height={'100%'}
+            >
+                <MotionMain
+                    initial="hidden"
+                    animate="enter"
+                    variants={variants}
+                    transition={{ type: 'ease-in' }}
+                    key={router.route}
+                    display="flex"
                     flex={1}
-                    px={5}
-                    mt={{ base: 6, md: 5 }}
-                    overflow={'hidden'}
-                    maxH={is100vh ? '100vh' : 'auto'}
-                    height={'100%'}
                 >
-                    <MotionMain
-                        initial="hidden"
-                        animate="enter"
-                        variants={variants}
-                        transition={{ type: 'ease-in' }}
-                        key={router.route}
-                        display="flex"
+                    <Flex
+                        d='flex'
+                        flexDirection={'row'}
+                        mb={4}
                         flex={1}
                     >
                         <Flex
-                            d='flex'
-                            flexDirection={'row'}
-                            mb={4}
                             flex={1}
                         >
-                            <Flex
-                                flex={1}
-                            >
-                                {children}
-                            </Flex>
+                            {children}
                         </Flex>
-                    </MotionMain>
-                </Flex>
-                {/* <Footer /> */}
+                    </Flex>
+                </MotionMain>
             </Flex>
         </>
     )
