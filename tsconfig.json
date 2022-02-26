@@ -38,6 +38,9 @@
       "@helpers/*": [
         "./helpers/*"
       ],
+      "@styles/*": [
+        "./styles/*"
+      ],
     },
   },
   "include": [
