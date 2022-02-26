@@ -1,15 +1,19 @@
-import { SessionProvider, signIn, useSession } from 'next-auth/react';
+import { useEffect } from 'react';
 
+import { useRouter } from 'next/router';
 
-import { ChakraProvider } from "@chakra-ui/react"
 import 'focus-visible/dist/focus-visible'
-import theme from "../styles/theme"
+
+import { SessionProvider, useSession } from 'next-auth/react';
+import { ChakraProvider } from "@chakra-ui/react"
+import { Provider as ReduxProvider } from 'react-redux';
+
 
 import { AppPropsWithLayout } from '@lib/types';
+import store from '@lib/redux/store';
+import theme from "../styles/theme";
 
 import Layout from '@components/Layout';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 export default function MyApp({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLayout) {
 
@@ -42,7 +46,9 @@ export default function MyApp({ Component, pageProps: { session, ...pageProps } 
   return (
     <SessionProvider session={session}>
       <ChakraProvider theme={theme}>
-        {auth(getLayout(<Component {...pageProps} />))}
+        <ReduxProvider store={store}>
+          {auth(getLayout(<Component {...pageProps} />))}
+        </ReduxProvider>
       </ChakraProvider >
       <style jsx global>{`
         body {
