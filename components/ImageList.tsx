@@ -11,7 +11,7 @@ const ImageList = () => {
 
     const borderColor = useColorModeValue("whiteAlpha.200", "blackAlpha.200");
     return (
-        <Stack>
+        <Stack w='100%'>
             {url && (
                 <Stack
                     direction={'row'}
@@ -20,6 +20,7 @@ const ImageList = () => {
                     justify={'space-between'}
                     border={'1px'}
                     borderColor={borderColor}
+                    w='100%'
                 >
                     <Image
                         src={url}
@@ -27,12 +28,12 @@ const ImageList = () => {
                         height={'100%'}
                         objectFit={'contain'}
                     />
-                    <Stack>
+                    <Stack w='100%'>
                         <Text>
-                            {url}
+                            Can
                         </Text>
                         <Text>
-                            10
+                            88.3%
                         </Text>
                     </Stack>
                     <IconButton

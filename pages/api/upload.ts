@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import formidable from 'formidable'
 import { getItemFact } from '@helpers/getItemFact';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -11,17 +10,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             };
 
             case "POST": {
-                // const { base64 } = req.body;
                 console.log(req.body);
 
                 // TODO: send requiest to server
-
                 const prompt = "can";
 
                 res.status(200).json({
                     success: false,
                     data: {
                         prompt,
+                        probability: 0.883,
                         description: getItemFact(prompt),
                     }
                 });

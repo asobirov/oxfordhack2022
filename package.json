@@ -18,7 +18,6 @@
     "@reduxjs/toolkit": "^1.7.2",
     "axios": "^0.26.0",
     "focus-visible": "^5.2.0",
-    "formidable": "^2.0.1",
     "framer-motion": "^6",
     "iconoir-react": "^2.1.0",
     "next": "12.1.0",
