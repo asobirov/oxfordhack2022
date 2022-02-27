@@ -4,7 +4,7 @@ import { useSession, signIn } from 'next-auth/react';
 
 import Image from 'next/image';
 import { Stack, Button, Box } from "@chakra-ui/react"
-import { GitHub } from "iconoir-react"
+import { GitHub, Shield } from "iconoir-react"
 
 import nopers from '@public/peepo/nopers.gif'
 import nodders from '@public/peepo/nodders.gif'
@@ -16,7 +16,7 @@ export const Authentication = () => {
 
     const handleClick = () => {
         setIsLoading(true);
-        signIn('github');
+        signIn('auth0');
     }
 
     return (
@@ -46,9 +46,9 @@ export const Authentication = () => {
                     size="lg"
                     isLoading={status === "loading" || isLoading}
                     onClick={handleClick}
-                    leftIcon={<GitHub />}
+                    leftIcon={<Shield />}
                 >
-                    Sign in with GitHub
+                    Sign in with Auth0
                 </Button>
             </Stack>
         </>
