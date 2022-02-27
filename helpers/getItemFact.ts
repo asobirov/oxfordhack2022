@@ -1,6 +1,6 @@
 import { gpt } from '@lib/openai';
 
-export const getProductFact = async (product: string) => {
+export const getItemFact = async (product: string) => {
   const prompts = [
     `Recycling empty ${product} helps to `,
     `The harmful effect of empty ${product} on the environment is `,

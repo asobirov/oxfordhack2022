@@ -46,16 +46,13 @@ const ImageUpload = () => {
 
     const handleDragEnter = () => {
         setIsDragEnter(true);
-        console.log("drag enter");
     }
 
     const handleDragLeave = () => {
         setIsDragLeave(true);
-        console.log("drag leave");
     }
 
     const handleOnDrop = (e: any) => {
-        console.log("drop");
 
         e.preventDefault();
         e.stopPropagation();

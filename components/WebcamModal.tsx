@@ -30,7 +30,6 @@ const WebcamModal = memo(({ onClose, isOpen }: WebcamModalProps) => {
             const canvas = webcamRef.current?.getCanvas();
 
             const url = URL.createObjectURL(await new Promise(resolve => canvas.toBlob(resolve)));
-            console.log(url);
             const base64 = canvas.toDataURL('image/jpeg');
 
             if (!base64 || !url) {
@@ -53,10 +52,6 @@ const WebcamModal = memo(({ onClose, isOpen }: WebcamModalProps) => {
         }
         onClose();
     }, [webcamRef]);
-
-    useEffect(() => {
-        console.log(webcamRef);
-    }, [webcamRef.current])
 
     const handleCapture = () => {
         capture();

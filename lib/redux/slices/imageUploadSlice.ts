@@ -19,7 +19,6 @@ const mouseSlice = createSlice({
             state.url = url;
         },
         resetImage: (state) => {
-            console.log("clearImage");
             state.base64 = null;
             state.url = null;
         }

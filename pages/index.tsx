@@ -16,7 +16,7 @@ const Home: NextPageWithLayout = () => {
   const { base64 } = useSelector((state: AppState) => state.imageUpload);
   const handleImageSubmit = async () => {
     if (base64) {
-      await axios.post('/api/image', {
+      await axios.post('/api/upload', {
         base64
       });
     }
