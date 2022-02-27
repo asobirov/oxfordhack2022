@@ -4,7 +4,7 @@ import { useSession, signIn } from 'next-auth/react';
 
 import Image from 'next/image';
 import { Stack, Button, Box } from "@chakra-ui/react"
-import { GitHub, Shield } from "iconoir-react"
+import { Shield } from "iconoir-react"
 
 import nopers from '@public/peepo/nopers.gif'
 import nodders from '@public/peepo/nodders.gif'
